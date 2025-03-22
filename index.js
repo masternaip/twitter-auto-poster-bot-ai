@@ -16,17 +16,11 @@ const generationConfig = {
 };
 const genAI = new GenAI.GoogleGenerativeAI(SECRETS.GEMINI_API_KEY);
 
-// add code
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" }, {
-    apiVersion: 'v1beta',
-});
-
 async function run() {
   // For text-only input, use the gemini-pro model
-  const model = genAI.getGenerativeModel({
-    model: "gemini-pro",
-    generationConfig,
-  });
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" }, {
+    apiVersion: 'v1beta',
+});
 
   // Write your prompt here
   const prompt =
